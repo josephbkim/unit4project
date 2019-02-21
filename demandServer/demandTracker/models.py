@@ -20,3 +20,14 @@ class Sites(models.Model):
 
     def __str__(self):
         return self.name
+
+
+class Stores(models.Model):
+    name = models.Charfield(max_length=25)
+    location = models.Charfield(max_length=50)
+    numDeliveries = models.IntegerField(max_length=50)
+    state = models.ForeignKey(State, on_delete=models.CASCADE,
+                              blank=True, null=True, related_name="stores")
+
+    def __str__(self):
+        return self.name
