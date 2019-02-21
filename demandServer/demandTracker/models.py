@@ -13,7 +13,7 @@ class State(models.Model):
 
 class Sites(models.Model):
     name = models.CharField(max_length=50)
-    numDeliveries = models.IntegerField(max_length=50)
+    numDeliveries = models.IntegerField
     totPurAmnt = models.DecimalField(
         max_digits=50, decimal_places=2, default=0.00)
     state = models.ForeignKey(State, on_delete=models.CASCADE,
@@ -25,8 +25,10 @@ class Sites(models.Model):
 
 class Stores(models.Model):
     name = models.CharField(max_length=25)
-    location = models.CharField(max_length=50)
-    numDeliveries = models.IntegerField(max_length=50)
+    storeLocation = models.CharField(max_length=50)
+    storeLong = models.DecimalField(max_digits=9, decimal_places=6)
+    storeLat = models.DecimalField(max_digits=9, decimal_places=6)
+    numDeliveries = models.IntegerField
     state = models.ForeignKey(State, on_delete=models.CASCADE,
                               blank=True, null=True, related_name="stores")
 
@@ -37,6 +39,8 @@ class Stores(models.Model):
 class Deliveries(models.Model):
     date = models.DateField(("Date"), default=date.today)
     delAddress = models.CharField(max_length=50)
+    delLong = models.DecimalField(max_digits=9, decimal_places=6)
+    delLat = models.DecimalField(max_digits=9, decimal_places=6)
     purAmount = models.DecimalField(
         max_digits=50, decimal_places=2, default=0.00)
     store = models.ForeignKey(
@@ -49,9 +53,7 @@ class Deliveries(models.Model):
 class Customers(models.Model):
     name = models.CharField(max_length=25)
     address = models.CharField(max_length=50)
-    custLong = models.DecimalField(max_digits=9, decimal_places=6)
-    custLat = models.DecimalField(max_digits=9, decimal_places=6)
-    phoneNum = models.CharField(max_digits=10)
+    phoneNum = models.CharField(max_length=10)
     deliveries = models.ForeignKey(
         Deliveries, on_delete=models.CASCADE, blank=True, null=True, related_name="customers")
 
