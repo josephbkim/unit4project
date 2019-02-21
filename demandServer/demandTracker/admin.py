@@ -4,7 +4,7 @@ from .models import *
 # Register your models here.
 
 admin.site.register(State)
-admin.site.register(Sites)
-admin.site.register(Stores)
-admin.site.register(Deliveries)
-admin.site.register(Customers)
+admin.site.register(Site)
+admin.site.register(Store)
+admin.site.register(Delivery)
+admin.site.register(Customer)

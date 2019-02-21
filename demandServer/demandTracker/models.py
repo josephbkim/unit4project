@@ -11,7 +11,7 @@ class State(models.Model):
         return self.name
 
 
-class Sites(models.Model):
+class Site(models.Model):
     name = models.CharField(max_length=50)
     numDeliveries = models.IntegerField
     totPurAmnt = models.DecimalField(
@@ -23,7 +23,7 @@ class Sites(models.Model):
         return self.name
 
 
-class Stores(models.Model):
+class Store(models.Model):
     name = models.CharField(max_length=25)
     storeLocation = models.CharField(max_length=50)
     storeLong = models.DecimalField(max_digits=9, decimal_places=6)
@@ -36,26 +36,29 @@ class Stores(models.Model):
         return self.name
 
 
-class Deliveries(models.Model):
+class Delivery(models.Model):
+    class Meta:
+        verbose_name_plural = "deliveries"
+
     date = models.DateField(("Date"), default=date.today)
     delAddress = models.CharField(max_length=50)
     delLong = models.DecimalField(max_digits=9, decimal_places=6)
     delLat = models.DecimalField(max_digits=9, decimal_places=6)
     purAmount = models.DecimalField(
         max_digits=50, decimal_places=2, default=0.00)
-    store = models.ForeignKey(
-        Stores, on_delete=models.CASCADE, blank=True, null=True, related_name="deliveries")
+    stores = models.ForeignKey(
+        Store, on_delete=models.CASCADE, blank=True, null=True, related_name="deliveries")
 
     def __str__(self):
         return self.date
 
 
-class Customers(models.Model):
+class Customer(models.Model):
     name = models.CharField(max_length=25)
     address = models.CharField(max_length=50)
     phoneNum = models.CharField(max_length=10)
     deliveries = models.ForeignKey(
-        Deliveries, on_delete=models.CASCADE, blank=True, null=True, related_name="customers")
+        Delivery, on_delete=models.CASCADE, blank=True, null=True, related_name="customers")
 
     def __str__(self):
         return self.name
