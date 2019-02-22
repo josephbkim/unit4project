@@ -5,55 +5,73 @@ from datetime import date
 
 
 class State(models.Model):
+    state_id = models.AutoField(primary_key=True)
     name = models.CharField(max_length=25)
 
     def __str__(self):
         return self.name
 
 
-class Sites(models.Model):
+class Site(models.Model):
+    site_id = models.AutoField(primary_key=True)
     name = models.CharField(max_length=50)
-    numDeliveries = models.IntegerField(max_length=50)
+    numDeliveries = models.IntegerField()
     totPurAmnt = models.DecimalField(
         max_digits=50, decimal_places=2, default=0.00)
-    state = models.ForeignKey(State, on_delete=models.CASCADE,
-                              blank=True, null=True, related_name="sites")
+    stateId = models.ForeignKey(State, on_delete=models.CASCADE,
+                                blank=True, null=True, related_name="sites")
 
     def __str__(self):
         return self.name
 
 
-class Stores(models.Model):
+class Store(models.Model):
+    store_id = models.AutoField(primary_key=True)
     name = models.CharField(max_length=25)
     location = models.CharField(max_length=50)
-    numDeliveries = models.IntegerField(max_length=50)
-    state = models.ForeignKey(State, on_delete=models.CASCADE,
-                              blank=True, null=True, related_name="stores")
+    storeLong = models.DecimalField(
+        max_digits=9, decimal_places=6, blank=True, null=True)
+    storeLat = models.DecimalField(
+        max_digits=9, decimal_places=6, blank=True, null=True)
+    numDeliveries = models.IntegerField()
+    stateId = models.ForeignKey(State, on_delete=models.CASCADE,
+                                blank=True, null=True, related_name="stores")
 
     def __str__(self):
         return self.name
 
 
-class Deliveries(models.Model):
-    date = models.DateField(("Date"), default=date.today)
+class Delivery(models.Model):
+    class Meta:
+        verbose_name_plural = "deliveries"
+
+    date = models.DateField(auto_now_add=True)
     delAddress = models.CharField(max_length=50)
+    delLong = models.DecimalField(
+        max_digits=9, decimal_places=6, blank=True, null=True)
+    delLat = models.DecimalField(
+        max_digits=9, decimal_places=6, blank=True, null=True)
     purAmount = models.DecimalField(
         max_digits=50, decimal_places=2, default=0.00)
-    store = models.ForeignKey(
-        Stores, on_delete=models.CASCADE, blank=True, null=True, related_name="deliveries")
+    delivery_id = models.AutoField(primary_key=True)
 
-    def __str__(self):
+    storeId = models.ForeignKey(
+        Store, on_delete=models.CASCADE, blank=True, null=True, related_name="deliveries")
+
+    def __date__(self):
         return self.date
 
 
-class Customers(models.Model):
+class Customer(models.Model):
     name = models.CharField(max_length=25)
     address = models.CharField(max_length=50)
-    custLong = models.DecimalField(max_digits=9, decimal_places=6)
-    custLat = models.DecimalField(max_digits=9, decimal_places=6)
-    phoneNum = models.CharField(max_digits=10)
-    deliveries = models.ForeignKey(
-        Deliveries, on_delete=models.CASCADE, blank=True, null=True, related_name="customers")
+    custLong = models.DecimalField(
+        max_digits=9, decimal_places=6, blank=True, null=True)
+    custLat = models.DecimalField(
+        max_digits=9, decimal_places=6, blank=True, null=True)
+    phoneNum = models.CharField(max_length=10)
+    deliveryId = models.ForeignKey(
+        Delivery, on_delete=models.CASCADE, blank=True, null=True, related_name="customers")
 
     def __str__(self):
         return self.name
