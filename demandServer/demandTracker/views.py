@@ -21,7 +21,7 @@ class StoreView(viewsets.ModelViewSet):
 
 class DeliveryView(viewsets.ModelViewSet):
     serializer_class = DeliverySerializer
-    queryset = Deliver.objects.all()
+    queryset = Delivery.objects.all()
 
 
 class CustomerView(viewsets.ModelViewSet):
