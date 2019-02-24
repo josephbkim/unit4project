@@ -1,7 +1,11 @@
 import React, { Component } from "react";
 import AppBar from "@material-ui/core/AppBar";
 import Toolbar from "@material-ui/core/Toolbar";
+import { withStyles } from "material-ui/styles";
 import Typography from "@material-ui/core/Typography";
+import Button from "@material-ui/core/Button";
+import Spacing from "@material-ui/system";
+import { Grid } from "@material-ui/core";
 
 class NavBar extends Component {
   render() {
@@ -9,9 +13,19 @@ class NavBar extends Component {
       <div>
         <AppBar position="static">
           <Toolbar>
-            <Typography variant="title" color="inherit">
-              React & Material-UI Sample Application
-            </Typography>
+            <StyledTypography variant="title" color="inherit">
+              <div className={classes.buttons}>
+                <Button variant="contained" color="primary">
+                  Home
+                </Button>
+                <Button variant="contained" color="primary">
+                  Stores
+                </Button>
+                <Button variant="contained" color="primary">
+                  Sites
+                </Button>
+              </div>
+            </StyledTypography>
           </Toolbar>
         </AppBar>
       </div>
@@ -19,4 +33,12 @@ class NavBar extends Component {
   }
 }
 
-export default NavBar;
+export default withStylesNavBar;
+
+const styles = theme => ({
+  buttons: {
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "space-around"
+  }
+});

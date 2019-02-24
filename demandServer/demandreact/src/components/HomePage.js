@@ -1,14 +1,12 @@
 import React, { Component } from "react";
+import { Grid, Paper } from "@material-ui/core";
 
 class HomePage extends Component {
   render() {
     return (
-      <div>
-        <div>This is the homepage!</div>
-        <div>
-          <h1>Welcome</h1>
-        </div>
-      </div>
+      <Grid container>
+        <Paper>This is the homepage !</Paper>
+      </Grid>
     );
   }
 }

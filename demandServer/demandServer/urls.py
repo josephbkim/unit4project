@@ -27,5 +27,6 @@ router.register('customers', views.CustomerView)
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('api/', include(router.urls))
+    path('api/', include(router.urls)),
+    # path('', include(demandreact.urls))
 ]
