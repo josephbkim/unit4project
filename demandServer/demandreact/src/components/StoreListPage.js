@@ -1,6 +1,8 @@
 import React, { Component } from "react";
-import Store from "./Store";
 import styled from "styled-components";
+
+import Store from "./Store";
+
 
 class StoreListPage extends Component {
   render() {
