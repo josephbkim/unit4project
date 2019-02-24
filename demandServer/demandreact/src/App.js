@@ -27,5 +27,6 @@ class App extends Component {
 export default App;
 
 const WebDiv = styled.div`
+  font-family: "Kreon", serif;
   background-color: #497195;
 `;
