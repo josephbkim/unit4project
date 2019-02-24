@@ -1,44 +1,33 @@
 import React, { Component } from "react";
-import AppBar from "@material-ui/core/AppBar";
-import Toolbar from "@material-ui/core/Toolbar";
-import { withStyles } from "material-ui/styles";
-import Typography from "@material-ui/core/Typography";
-import Button from "@material-ui/core/Button";
-import Spacing from "@material-ui/system";
-import { Grid } from "@material-ui/core";
+import styled from "styled-components";
+import { Link } from "react-router-dom";
 
 class NavBar extends Component {
   render() {
     return (
-      <div>
-        <AppBar position="static">
-          <Toolbar>
-            <StyledTypography variant="title" color="inherit">
-              <div className={classes.buttons}>
-                <Button variant="contained" color="primary">
-                  Home
-                </Button>
-                <Button variant="contained" color="primary">
-                  Stores
-                </Button>
-                <Button variant="contained" color="primary">
-                  Sites
-                </Button>
-              </div>
-            </StyledTypography>
-          </Toolbar>
-        </AppBar>
-      </div>
+      <StyledNav>
+        <StyledButton>Home</StyledButton>
+        <StyledButton>Stores</StyledButton>
+        <StyledButton>Sites</StyledButton>
+      </StyledNav>
     );
   }
 }
 
-export default withStylesNavBar;
+export default NavBar;
 
-const styles = theme => ({
-  buttons: {
-    display: "flex",
-    alignItems: "center",
-    justifyContent: "space-around"
-  }
-});
+const StyledNav = styled.div`
+  display: flex;
+  justify-content: space-around;
+  background-color: #0478e1;
+  height: 5vh;
+  box-shadow: 2px 3px #304a62;
+`;
+
+const StyledButton = styled.button`
+  height: 60%;
+  width: 25%;
+  margin: auto;
+  background-color: #6eaae1;
+  border: 1px solid #304a62;
+`;
