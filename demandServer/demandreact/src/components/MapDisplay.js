@@ -25,8 +25,10 @@ class MapDisplay extends Component {
 export default MapDisplay;
 
 const MapBox = styled.div`
-  height: 70vh;
-  width: 70vw;
-  border: 1px solid grey;
-  padding: auto;
+  justify-self: center;
+  height: 96vh;
+  width: 96vw;
+  border: 2px solid grey;
+  margin: auto;
+  padding: 2vh 2vw;
 `;

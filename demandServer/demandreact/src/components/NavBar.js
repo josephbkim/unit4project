@@ -6,9 +6,15 @@ class NavBar extends Component {
   render() {
     return (
       <StyledNav>
-        <StyledButton>Home</StyledButton>
-        <StyledButton>Stores</StyledButton>
-        <StyledButton>Sites</StyledButton>
+        <StyledButton>
+          <Link to="/">Home</Link>
+        </StyledButton>
+        <StyledButton>
+          <Link to="/stores">Stores</Link>
+        </StyledButton>
+        <StyledButton>
+          <Link to="/sites">Sites</Link>
+        </StyledButton>
       </StyledNav>
     );
   }

@@ -15,9 +15,10 @@ class HomePage extends Component {
 export default HomePage;
 
 const HomeDiv = styled.div`
-  display: grid;
-  justify-content: center;
-  height: 85vh;
-  width: 100vh;
-  padding-top: 2vh;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-content: space-around;
+  height: 100vh;
+  width: 100vw;
 `;

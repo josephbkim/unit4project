@@ -2,7 +2,7 @@ import React, { Component } from "react";
 
 class SitesListPage extends Component {
   render() {
-    return <div />;
+    return <div>This is the sites list SitesListPage</div>;
   }
 }
 
