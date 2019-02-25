@@ -9,7 +9,7 @@ class StoreListPage extends Component {
   state = {
     stateList: {
       name: "",
-      site: [{}],
+      sites: [{}],
       stores: [{}]
     }
   };
@@ -21,16 +21,14 @@ class StoreListPage extends Component {
   getThisState = () => {
     axios.get(`api/states`).then(res => {
       console.log(res.data);
-      let stateName = res.data.name;
       this.setState({ stateList: res.data });
-      console.log(stateName);
     });
   };
 
   render() {
     return (
       <ConDiv>
-        <h1>All Stores in {this.stateName}</h1>
+        <h1>All Stores in {this.stateList.name}</h1>
         <StoreDiv>
           <Store />
         </StoreDiv>
