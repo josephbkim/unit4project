@@ -9,22 +9,22 @@ class CustomerSerializer(serializers.ModelSerializer):
 
 
 class DeliverySerializer(serializers.ModelSerializer):
-    customer = CustomerSerializer(many=True, read_only=True)
+    customers = CustomerSerializer(many=True, read_only=True)
 
     class Meta:
         model = Delivery
         fields = ('date', 'delAddress', 'delLong',
-                  'delLat', 'purAmount', 'delivery_id', 'customer')
+                  'delLat', 'purAmount', 'delivery_id', 'customers')
 
 
 class StoreSerializer(serializers.ModelSerializer):
-    delivery = DeliverySerializer(many=True, read_only=True)
-    customer = CustomerSerializer(many=True, read_only=True)
+    deliveries = DeliverySerializer(many=True, read_only=True)
+    customers = CustomerSerializer(many=True, read_only=True)
 
     class Meta:
         model = Store
         fields = ('store_id', 'name', 'location',
-                  'storeLong', 'storeLat', 'numDeliveries', 'delivery', 'customer')
+                  'storeLong', 'storeLat', 'numDeliveries', 'deliveries', 'customers')
 
 
 class SiteSerializer(serializers.ModelSerializer):
@@ -34,9 +34,9 @@ class SiteSerializer(serializers.ModelSerializer):
 
 
 class StateSerializer(serializers.ModelSerializer):
-    site = SiteSerializer(many=True, read_only=True)
-    store = StoreSerializer(many=True, read_only=True)
+    sites = SiteSerializer(many=True, read_only=True)
+    stores = StoreSerializer(many=True, read_only=True)
 
     class Meta:
         model = State
-        fields = ('state_id', 'name', 'site', 'store')
+        fields = ('state_id', 'name', 'sites', 'stores')

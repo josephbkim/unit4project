@@ -20,7 +20,7 @@ export default NavBar;
 
 const StyledNav = styled.div`
   display: flex;
-  font-size: 1.5vw;
+  font-size: 80%;
   font-family: "Kreon", serif;
   justify-content: space-around;
   align-content: space-around;

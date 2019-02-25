@@ -2,11 +2,12 @@
   "name": "demandreact",
   "version": "0.1.0",
   "private": true,
-  "proxy": "http://localhost:8000",
+  "proxy": "http://localhost:8000/",
   "dependencies": {
     "@material-ui/core": "^3.9.2",
     "axios": "^0.18.0",
     "contentful": "^7.3.0",
+    "google-map-react": "^1.1.2",
     "nodemon": "^1.18.10",
     "react": "^16.8.3",
     "react-dom": "^16.8.3",
