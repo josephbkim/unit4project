@@ -17,7 +17,6 @@ class MapDisplay extends Component {
   render() {
     const API_KEY = process.env.REACT_APP_EMBED_API_KEY;
     return (
-      // <div>
       <MapBox>
         {/* <div style={{ height: "100%", width: "100%" }}>
           <GoogleMapReact
@@ -32,6 +31,7 @@ class MapDisplay extends Component {
             text={"Georgia"}
           />
         </div> */}
+
         <Iframe
           width="100%"
           height="100%"
@@ -40,9 +40,9 @@ class MapDisplay extends Component {
           url={`https://www.google.com/maps/embed/v1/place?q=place_id:ChIJV4FfHcU28YgR5xBP7BC8hGY&key=${API_KEY}`}
           position="center"
           allowfullscreen
+          onClick="/stores"
         />
       </MapBox>
-      // {/* </div> */}
     );
   }
 }

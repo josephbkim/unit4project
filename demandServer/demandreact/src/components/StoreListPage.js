@@ -1,37 +1,41 @@
 import React, { Component } from "react";
 import styled from "styled-components";
 import axios from "axios";
+import { Link } from "react-router-dom";
 
 import Store from "./Store";
 import { get } from "https";
 
 class StoreListPage extends Component {
   state = {
-    stateList: {
-      name: "",
-      sites: [{}],
-      stores: [{}]
-    }
+    storeList: [
+      {
+        name: ""
+      }
+    ]
   };
 
   componentDidMount = () => {
-    this.getThisState();
+    this.getAllStores();
   };
 
-  getThisState = () => {
-    axios.get(`api/states`).then(res => {
+  getAllStores = () => {
+    axios.get(`api/stores`).then(res => {
       console.log(res.data);
-      this.setState({ stateList: res.data });
+      this.setState({ storeList: res.data });
     });
   };
 
   render() {
     return (
       <ConDiv>
-        <h1>All Stores in {this.stateList.name}</h1>
-        <StoreDiv>
+        <h1>All Stores in Georgia</h1>
+        {this.state.storeList.map((store, i) => (
+          <div key={i}>{store.name}</div>
+        ))}
+        {/* <StoreDiv>
           <Store />
-        </StoreDiv>
+        </StoreDiv> */}
       </ConDiv>
     );
   }
