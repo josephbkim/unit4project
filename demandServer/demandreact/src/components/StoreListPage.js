@@ -1,14 +1,31 @@
 import React, { Component } from "react";
 import styled from "styled-components";
+import axios from "axios";
 
 import Store from "./Store";
-
+import { get } from "https";
 
 class StoreListPage extends Component {
+  state = {
+    stateList: {
+      name: ""
+    }
+  };
+
+  componentDidMount = () => {
+    this.getThisState();
+  };
+
+  getThisState = () => {
+    axios.get("api/states").then(res => {
+      this.setState({ stateList: res.data }).catch(err => console.log(err));
+    });
+  };
+
   render() {
     return (
       <ConDiv>
-        <h1>This is the Store List Page</h1>
+        <h1>All Stores in {this.state.stateList.name}</h1>
         <StoreDiv>
           <Store />
         </StoreDiv>

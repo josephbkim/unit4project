@@ -11,7 +11,7 @@ export default Store;
 const StoreBox = styled.div`
   justify-self: center;
   height: 30vh;
-  width: 60vw;
+  width: 50vw;
   background-color: black;
   margin: 2px;
 `;
