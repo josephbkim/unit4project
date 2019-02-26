@@ -3,8 +3,7 @@ import styled from "styled-components";
 import axios from "axios";
 import { Link } from "react-router-dom";
 
-import MapDisplay from "./MapDisplay";
-import Site from "./Site";
+import MapDisplay from "../MapDisplay";
 
 class SitesListPage extends Component {
   state = {
@@ -13,7 +12,8 @@ class SitesListPage extends Component {
         name: "",
         site_id: ""
       }
-    ]
+    ],
+    addFormVisible: false
   };
 
   componentDidMount = () => {
@@ -21,7 +21,7 @@ class SitesListPage extends Component {
   };
 
   getAllSites = () => {
-    axios.get(`api/sites`).then(res => {
+    axios.get(`api/v1/sites`).then(res => {
       console.log(res.data);
       this.setState({ siteList: res.data });
     });
@@ -37,6 +37,7 @@ class SitesListPage extends Component {
               <Link to={`/sites/${site.site_id}`}>{site.name}</Link>
             </div>
           ))}
+          <button>Add New Site</button>
         </MainCompBox>
         <MapBox>
           <MapDisplay />

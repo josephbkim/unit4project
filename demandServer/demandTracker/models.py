@@ -1,8 +1,6 @@
 from django.db import models
 from datetime import date
 
-# Create your models here.
-
 
 class State(models.Model):
     state_id = models.AutoField(primary_key=True)

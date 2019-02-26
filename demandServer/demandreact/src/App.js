@@ -6,8 +6,8 @@ import axios from "axios";
 import NavBar from "./components/NavBar";
 import HomePage from "./components/HomePage";
 import StoreListPage from "./components/StoreListPage";
-import SitesListPage from "./components/SitesListPage";
-import Site from "./components/Site";
+import SitesListPage from "./components/Site/SitesListPage";
+import Site from "./components/Site/Site";
 import Store from "./components/Store";
 
 class App extends Component {
@@ -19,9 +19,9 @@ class App extends Component {
           <Switch>
             <Route exact path="/" component={HomePage} />
             <Route exact path="/stores" component={StoreListPage} />
-            <Route exact path="/sites/storeId" component={Store} />
+            <Route exact path="/stores/:storeid" component={Store} />
             <Route exact path="/sites" component={SitesListPage} />
-            <Route exact path="/sites/:siteId" component={Site} />
+            <Route exact path="/sites/:siteid" component={Site} />
           </Switch>
         </WebDiv>
       </Router>
@@ -36,11 +36,11 @@ const WebDiv = styled.div`
   background-color: #497195;
 `;
 
-const MapBox = styled.div`
-  justify-self: center;
-  height: 85vh;
-  width: 65vw;
-  margin: 5vh auto auto;
-  box-shadow: 5px 10px 10px black;
-  border: 1px solid white;
-`;
+// const MapBox = styled.div`
+//   justify-self: center;
+//   height: 85vh;
+//   width: 65vw;
+//   margin: 5vh auto auto;
+//   box-shadow: 5px 10px 10px black;
+//   border: 1px solid white;
+// `;
