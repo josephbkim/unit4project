@@ -3,13 +3,15 @@ import styled from "styled-components";
 import axios from "axios";
 import { Link } from "react-router-dom";
 
+import MapDisplay from "./MapDisplay";
 import Site from "./Site";
 
 class SitesListPage extends Component {
   state = {
     siteList: [
       {
-        name: ""
+        name: "",
+        site_id: ""
       }
     ]
   };
@@ -27,27 +29,24 @@ class SitesListPage extends Component {
 
   render() {
     return (
-      <ConDiv>
-        <h1>All Sites in Georgia</h1>
-        {this.state.siteList.map((site, i) => (
-          <div key={i}>
-            <Link to={`/sites/${site._id}`}>{site.name}</Link>
-          </div>
-        ))}
-      </ConDiv>
+      <SiteDiv>
+        <MainCompBox>
+          <h1>All Sites in Georgia</h1>
+          {this.state.siteList.map((site, i) => (
+            <div key={i}>
+              <Link to={`/sites/${site.site_id}`}>{site.name}</Link>
+            </div>
+          ))}
+        </MainCompBox>
+        <MapBox>
+          <MapDisplay />
+        </MapBox>
+      </SiteDiv>
     );
   }
 }
 
 export default SitesListPage;
-
-const ConDiv = styled.div`
-  display: block;
-  text-align: center;
-  justify-items: center;
-  height: 100vh;
-  margin: auto;
-`;
 
 const SiteDiv = styled.div`
   display: flex;
@@ -56,4 +55,25 @@ const SiteDiv = styled.div`
   align-content: space-around;
   height: 100vh;
   width: 100vw;
+`;
+
+const MainCompBox = styled.div`
+  height: 85vh;
+  width: 30vw;
+  margin: 5vh auto auto;
+  box-shadow: 5px 10px 10px black;
+  border: 1px solid white;
+  background-color: whitesmoke;
+  /* padding-left: 1.5vw; */
+  /* text-decoration: underline; */
+  text-align: center;
+`;
+
+const MapBox = styled.div`
+  justify-self: center;
+  height: 85vh;
+  width: 65vw;
+  margin: 5vh auto auto;
+  box-shadow: 5px 10px 10px black;
+  border: 1px solid white;
 `;
