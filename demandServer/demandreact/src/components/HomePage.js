@@ -1,15 +1,16 @@
 import React, { Component } from "react";
 import styled from "styled-components";
 import MapDisplay from "./MapDisplay";
+import State from "./State";
 
 class HomePage extends Component {
   render() {
     return (
       <HomeDiv>
         <StatesDispBox>
-          <h4>States</h4>
-        </StatesDispBox>{" "}
-        />
+          <h3>States</h3>
+          <State />
+        </StatesDispBox>
         <MapBox>
           <MapDisplay />
         </MapBox>
@@ -36,6 +37,9 @@ const StatesDispBox = styled.div`
   box-shadow: 5px 10px 10px black;
   border: 1px solid white;
   background-color: whitesmoke;
+  /* padding-left: 1.5vw; */
+  text-decoration: underline;
+  text-align: center;
 `;
 
 const MapBox = styled.div`
