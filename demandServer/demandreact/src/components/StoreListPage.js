@@ -33,9 +33,6 @@ class StoreListPage extends Component {
         {this.state.storeList.map((store, i) => (
           <div key={i}>{store.name}</div>
         ))}
-        {/* <StoreDiv>
-          <Store />
-        </StoreDiv> */}
       </ConDiv>
     );
   }

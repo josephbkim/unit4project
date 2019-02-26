@@ -1,16 +1,39 @@
 import React, { Component } from "react";
 import styled from "styled-components";
+import axios from "axios";
+import { Link } from "react-router-dom";
 
 import Site from "./Site";
 
 class SitesListPage extends Component {
+  state = {
+    siteList: [
+      {
+        name: ""
+      }
+    ]
+  };
+
+  componentDidMount = () => {
+    this.getAllSites();
+  };
+
+  getAllSites = () => {
+    axios.get(`api/sites`).then(res => {
+      console.log(res.data);
+      this.setState({ siteList: res.data });
+    });
+  };
+
   render() {
     return (
       <ConDiv>
-        <h1>This is the sites list SitesListPage</h1>
-        <SiteDiv>
-          <Site />
-        </SiteDiv>
+        <h1>All Sites in Georgia</h1>
+        {this.state.siteList.map((site, i) => (
+          <div key={i}>
+            <Link to={`/sites/${site._id}`}>{site.name}</Link>
+          </div>
+        ))}
       </ConDiv>
     );
   }
