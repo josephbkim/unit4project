@@ -38,7 +38,7 @@ const StatesDispBox = styled.div`
   border: 1px solid white;
   background-color: whitesmoke;
   /* padding-left: 1.5vw; */
-  text-decoration: underline;
+  /* text-decoration: underline; */
   text-align: center;
 `;
 

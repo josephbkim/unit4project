@@ -35,3 +35,12 @@ const WebDiv = styled.div`
   font-family: "Kreon", serif;
   background-color: #497195;
 `;
+
+const MapBox = styled.div`
+  justify-self: center;
+  height: 85vh;
+  width: 65vw;
+  margin: 5vh auto auto;
+  box-shadow: 5px 10px 10px black;
+  border: 1px solid white;
+`;
