@@ -5,10 +5,10 @@ import axios from "axios";
 
 import NavBar from "./components/NavBar";
 import HomePage from "./components/HomePage";
-import StoreListPage from "./components/StoreListPage";
+import StoreListPage from "./components/Store/StoreListPage";
 import SitesListPage from "./components/Site/SitesListPage";
 import Site from "./components/Site/Site";
-import Store from "./components/Store";
+import Store from "./components/Store/Store";
 
 class App extends Component {
   render() {

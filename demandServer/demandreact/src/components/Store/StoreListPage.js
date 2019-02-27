@@ -3,8 +3,8 @@ import styled from "styled-components";
 import axios from "axios";
 import { Link } from "react-router-dom";
 
-import Store from "./Store";
-import MapDisplay from "./MapDisplay";
+import Store from "../Store/Store";
+import MapDisplay from "../MapDisplay";
 
 class StoreListPage extends Component {
   state = {
