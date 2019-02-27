@@ -45,7 +45,10 @@ class SitesListPage extends Component {
           <button onClick={this.toggleAddForm}>Add New Site</button>
           <div>
             {this.state.addFormVisible ? (
-              <AddSiteForm getAllSites={this.getAllSites} />
+              <AddSiteForm
+                getAllSites={this.getAllSites}
+                toggleAddForm={this.toggleAddForm}
+              />
             ) : null}
           </div>
         </MainCompBox>

@@ -13,14 +13,15 @@ class AddSiteForm extends Component {
   handleChange = event => {
     const newSiteState = { ...this.state.thisSite };
     newSiteState[event.target.name] = event.target.value;
-    this.setState({ siteState: newSiteState });
+    this.setState({ thisSite: newSiteState });
   };
 
   handleSubmit = event => {
     event.preventDefault();
     const thePowPow = this.state.thisSite;
-    axios.post(`/api/v1/sites`, thePowPow).then(res => {
+    axios.post(`/api/v1/sites/`, thePowPow).then(res => {
       this.props.getAllSites();
+      this.props.toggleAddForm();
     });
   };
 
@@ -28,14 +29,14 @@ class AddSiteForm extends Component {
     return (
       <div>
         <h1>This is the Add Site Form</h1>
-        <form onSubmit={this.handlesubmit}>
+        <form onSubmit={this.handleSubmit}>
           <label>
             <input
               className="input"
               name="name"
               type="text"
               placeholder="name"
-              value={this.state.thisSite.name}
+              defaultValue={this.state.thisSite.name}
               onChange={this.handleChange}
             />
           </label>
@@ -45,7 +46,7 @@ class AddSiteForm extends Component {
               name="numDeliveries"
               type="number"
               placeholder="Number of Deliveries"
-              value={this.state.thisSite.numDeliveries}
+              defaultValue={this.state.thisSite.numDeliveries}
               onChange={this.handleChange}
             />
           </label>
@@ -55,11 +56,11 @@ class AddSiteForm extends Component {
               name="totPurAmnt"
               type="float"
               placeholder="Total Purchase Amount"
-              value={this.state.thisSite.totPurAmnt}
+              defaultValue={this.state.thisSite.totPurAmnt}
               onChange={this.handleChange}
             />
           </label>
-          <button>Add Site</button>
+          <button type="submit">Add Site</button>
         </form>
       </div>
     );
