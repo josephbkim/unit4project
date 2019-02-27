@@ -4,6 +4,7 @@ import axios from "axios";
 import { Link } from "react-router-dom";
 
 import MapDisplay from "../MapDisplay";
+import AddSiteForm from "./AddSiteForm";
 
 class SitesListPage extends Component {
   state = {
@@ -27,6 +28,10 @@ class SitesListPage extends Component {
     });
   };
 
+  toggleAddForm = () => {
+    this.setState({ addFormVisible: !this.state.addFormVisible });
+  };
+
   render() {
     return (
       <SiteDiv>
@@ -37,7 +42,8 @@ class SitesListPage extends Component {
               <Link to={`/sites/${site.site_id}`}>{site.name}</Link>
             </div>
           ))}
-          <button>Add New Site</button>
+          <button onClick={this.toggleAddForm}>Add New Site</button>
+          <div>{this.state.addFormVisible ? <AddSiteForm /> : null}</div>
         </MainCompBox>
         <MapBox>
           <MapDisplay />

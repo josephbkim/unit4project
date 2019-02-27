@@ -16,7 +16,7 @@ class State extends Component {
   };
 
   getAllStates = () => {
-    axios.get(`api/states`).then(res => {
+    axios.get(`api/v1/states`).then(res => {
       console.log(res.data);
       this.setState({ stateList: res.data });
     });

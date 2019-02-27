@@ -20,7 +20,7 @@ class StoreListPage extends Component {
   };
 
   getAllStores = () => {
-    axios.get(`api/stores`).then(res => {
+    axios.get(`api/v1/stores`).then(res => {
       console.log(res.data);
       this.setState({ storeList: res.data });
     });
