@@ -2,6 +2,8 @@ import React, { Component } from "react";
 import styled from "styled-components";
 import axios from "axios";
 
+import EditSiteForm from "./EditSiteForm";
+
 class Site extends Component {
   state = {
     thisSite: [
@@ -12,14 +14,15 @@ class Site extends Component {
         totPurAmnt: "",
         state_Id: ""
       }
-    ]
+    ],
+    editFormVisible: false
   };
 
   componentDidMount = () => {
-    this.getThisUser();
+    this.getThisSite();
   };
 
-  getThisUser = () => {
+  getThisSite = () => {
     let newSiteId = this.props.match.params.siteid;
     console.log(newSiteId);
     axios.get(`/api/v1/sites/${newSiteId}`).then(res => {
@@ -31,7 +34,11 @@ class Site extends Component {
     let newSiteId = this.props.match.params.siteid;
     axios
       .delete(`/api/v1/sites/${newSiteId}`)
-      .then(() => this.props.history.goback());
+      .then(() => this.props.history.goBack());
+  };
+
+  toggleEditForm = () => {
+    this.setState({ editFormVisible: !this.state.editFormVisible });
   };
 
   render() {
@@ -43,7 +50,17 @@ class Site extends Component {
           <p>Project Id: {this.state.thisSite.site_id}</p>
           <p>Total Deliveries: {this.state.thisSite.numDeliveries}</p>
           <ButtonDiv>
-            <button onClick={this.siteDelete}>Delete</button> />
+            <button onClick={this.siteDelete}>Delete</button>
+            <button onClick={this.toggleEditForm}>Edit</button>
+            <div>
+              {this.state.editFormVisible ? (
+                <EditSiteForm
+                  getThisSite={this.getThisSite}
+                  toggleEditForm={this.toggleEditForm}
+                  thisSite={this.state.thisSite}
+                />
+              ) : null}
+            </div>
           </ButtonDiv>
         </SiteBox>
       </SitePageDiv>
