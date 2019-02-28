@@ -40,7 +40,12 @@ class State extends Component {
 export default State;
 
 const StateDiv = styled.div`
+  width: 90%;
+  margin: auto;
   text-align: left;
-  padding-left: 2vw;
+  font-size: 3vh;
   text-decoration: none;
+  border: 1px solid white;
+  background-color: white;
+  border-radius: 2px;
 `;

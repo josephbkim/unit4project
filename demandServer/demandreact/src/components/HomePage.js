@@ -9,7 +9,7 @@ class HomePage extends Component {
     return (
       <HomeDiv>
         <StatesDispBox>
-          <h3>States</h3>
+          <h2>States</h2>
           <State />
         </StatesDispBox>
         <MapBox>
@@ -38,8 +38,6 @@ const StatesDispBox = styled.div`
   box-shadow: 5px 10px 10px black;
   border: 1px solid white;
   background-color: whitesmoke;
-  /* padding-left: 1.5vw; */
-  /* text-decoration: underline; */
   text-align: center;
   border-radius: 3px;
   background-color: #6eaae1;

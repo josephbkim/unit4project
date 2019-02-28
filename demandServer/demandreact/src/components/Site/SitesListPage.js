@@ -38,9 +38,9 @@ class SitesListPage extends Component {
         <MainCompBox>
           <h1>All Sites in Georgia</h1>
           {this.state.siteList.map((site, i) => (
-            <div key={i}>
+            <SiteBox key={i}>
               <Link to={`/sites/${site.site_id}`}>{site.name}</Link>
-            </div>
+            </SiteBox>
           ))}
           <button onClick={this.toggleAddForm}>Add New Site</button>
           <div>
@@ -90,4 +90,16 @@ const MapBox = styled.div`
   box-shadow: 5px 10px 10px black;
   border: 1px solid white;
   border-radius: 3px;
+`;
+
+const SiteBox = styled.div`
+  width: 85%;
+  margin: 1vh auto;
+  text-align: left;
+  font-size: 3vh;
+  text-decoration: none;
+  border: 1px solid white;
+  background-color: white;
+  border-radius: 2px;
+  padding: 4px;
 `;

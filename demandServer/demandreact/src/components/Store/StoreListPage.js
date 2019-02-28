@@ -38,9 +38,9 @@ class StoreListPage extends Component {
         <MainCompBox>
           <h1>All Stores in Georgia</h1>
           {this.state.storeList.map((store, i) => (
-            <div key={i}>
+            <StoreBox key={i}>
               <Link to={`/stores/${store.store_id}`}>{store.name}</Link>
-            </div>
+            </StoreBox>
           ))}
           <button onClick={this.toggleAddForm}>Add New Store</button>
           <div>
@@ -90,4 +90,16 @@ const MapBox = styled.div`
   box-shadow: 5px 10px 10px black;
   border: 1px solid white;
   border-radius: 3px;
+`;
+
+const StoreBox = styled.div`
+  width: 85%;
+  margin: 1vh auto;
+  text-align: left;
+  font-size: 3vh;
+  text-decoration: none;
+  border: 1px solid white;
+  background-color: white;
+  border-radius: 2px;
+  padding: 4px;
 `;
