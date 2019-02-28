@@ -4,7 +4,7 @@ import axios from "axios";
 import { Link } from "react-router-dom";
 
 import Store from "../Store/Store";
-import MapDisplay from "../MapDisplay";
+import MapDisplay from "../Maps/MapDisplay";
 import AddStoreForm from "./AddStoreForm";
 
 class StoreListPage extends Component {
@@ -77,10 +77,9 @@ const MainCompBox = styled.div`
   margin: 5vh auto auto;
   box-shadow: 5px 10px 10px black;
   border: 1px solid white;
-  background-color: whitesmoke;
-  /* padding-left: 1.5vw; */
-  /* text-decoration: underline; */
+  background-color: #6eaae1;
   text-align: center;
+  border-radius: 3px;
 `;
 
 const MapBox = styled.div`
@@ -90,4 +89,5 @@ const MapBox = styled.div`
   margin: 5vh auto auto;
   box-shadow: 5px 10px 10px black;
   border: 1px solid white;
+  border-radius: 3px;
 `;

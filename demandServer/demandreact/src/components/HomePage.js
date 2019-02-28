@@ -1,7 +1,8 @@
 import React, { Component } from "react";
 import styled from "styled-components";
-import MapDisplay from "./MapDisplay";
+
 import State from "./State";
+import GeorgiaMapDisplay from "./Maps/GeorgiaMapDisplay";
 
 class HomePage extends Component {
   render() {
@@ -12,7 +13,7 @@ class HomePage extends Component {
           <State />
         </StatesDispBox>
         <MapBox>
-          <MapDisplay />
+          <GeorgiaMapDisplay />
         </MapBox>
       </HomeDiv>
     );
@@ -25,7 +26,7 @@ const HomeDiv = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: space-around;
-  align-content: space-around;
+  align-items: space-around;
   height: 100vh;
   width: 100vw;
 `;
@@ -40,6 +41,8 @@ const StatesDispBox = styled.div`
   /* padding-left: 1.5vw; */
   /* text-decoration: underline; */
   text-align: center;
+  border-radius: 3px;
+  background-color: #6eaae1;
 `;
 
 const MapBox = styled.div`
@@ -49,4 +52,5 @@ const MapBox = styled.div`
   margin: 5vh auto auto;
   box-shadow: 5px 10px 10px black;
   border: 1px solid white;
+  border-radius: 3px;
 `;

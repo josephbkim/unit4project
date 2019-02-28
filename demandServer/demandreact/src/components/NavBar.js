@@ -20,10 +20,10 @@ export default NavBar;
 
 const StyledNav = styled.div`
   display: flex;
-  font-size: 80%;
+  font-size: 2.5vh;
   font-family: "Kreon", serif;
   justify-content: space-around;
-  align-content: space-around;
+  align-items: center;
   background-color: #0478e1;
   height: 5vh;
   box-shadow: 2px 5px 5px;
