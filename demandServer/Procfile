@@ -1,1 +1,1 @@
-web: gunicorn demandServe.wsgi --log-file -
+web: gunicorn demandServer.wsgi --log-file -
