@@ -18,10 +18,10 @@ This is an app that allows the client(company) to be able to see potential sites
 
 ## Wireframe
 
-- ![Wireframe 1](https://i.imgur.com/BWe7oRks.png)
-- ![Wireframe 2](https://i.imgur.com/GMoTFXfs.png)
-- ![Wireframe 3](https://i.imgur.com/yWzrx57s.png)
-- ![Wireframe 4](https://i.imgur.com/6mVYYoPs.png)
+- ![Wireframe 1](https://i.imgur.com/SSNLQTVs.png)
+- ![Wireframe 2](https://i.imgur.com/ovSJ4lTs.png)
+
+- ![ERD](https://i.imgur.com/McaU697s.png)
 
 ## Technologies
 
