@@ -23,8 +23,8 @@ class AddStoreForm extends Component {
     event.preventDefault();
     const thePowPow = this.state.thisStore;
     axios.post(`/api/v1/stores/`, thePowPow).then(res => {
-      this.props.getAllStores();
       this.props.toggleAddForm();
+      this.props.getAllStores();
     });
   };
 
