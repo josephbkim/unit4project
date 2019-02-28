@@ -9,6 +9,7 @@ django-heroku = "*"
 django-cors-headers = "*"
 whitenoise = "*"
 django-rest-framework = "*"
+django-extensions = "*"
 
 [requires]
 python_version = "3.7"
