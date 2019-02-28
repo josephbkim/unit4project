@@ -12,7 +12,7 @@ class Site extends Component {
         name: "",
         numDeliveries: "",
         totPurAmnt: "",
-        state_Id: ""
+        stateId: ""
       }
     ],
     editFormVisible: false
@@ -46,23 +46,23 @@ class Site extends Component {
       <SitePageDiv>
         <SiteBox>
           <h2>Current Site</h2>
-          <p>Project Name: {this.state.thisSite.name}</p>
-          <p>Project Id: {this.state.thisSite.site_id}</p>
+          <p>Site Name: {this.state.thisSite.name}</p>
+          <p>Site Id: {this.state.thisSite.site_id}</p>
           <p>Total Deliveries: {this.state.thisSite.numDeliveries}</p>
           <ButtonDiv>
             <button onClick={this.siteDelete}>Delete</button>
             <button onClick={this.toggleEditForm}>Edit</button>
-            <div>
-              {this.state.editFormVisible ? (
-                <EditSiteForm
-                  getThisSite={this.getThisSite}
-                  toggleEditForm={this.toggleEditForm}
-                  thisSite={this.state.thisSite}
-                />
-              ) : null}
-            </div>
           </ButtonDiv>
         </SiteBox>
+        <div>
+          {this.state.editFormVisible ? (
+            <EditSiteForm
+              getThisSite={this.getThisSite}
+              toggleEditForm={this.toggleEditForm}
+              thisSite={this.state.thisSite}
+            />
+          ) : null}
+        </div>
       </SitePageDiv>
     );
   }

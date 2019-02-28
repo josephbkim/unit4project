@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 
 import Store from "../Store/Store";
 import MapDisplay from "../MapDisplay";
+import AddStoreForm from "./AddStoreForm";
 
 class StoreListPage extends Component {
   state = {
@@ -12,7 +13,8 @@ class StoreListPage extends Component {
       {
         name: ""
       }
-    ]
+    ],
+    addFormVisible: false
   };
 
   componentDidMount = () => {
@@ -20,10 +22,14 @@ class StoreListPage extends Component {
   };
 
   getAllStores = () => {
-    axios.get(`api/v1/stores`).then(res => {
+    axios.get(`api/v1/stores/`).then(res => {
       console.log(res.data);
       this.setState({ storeList: res.data });
     });
+  };
+
+  toggleAddForm = () => {
+    this.setState({ addFormVisible: !this.state.addFormVisible });
   };
 
   render() {
@@ -32,8 +38,19 @@ class StoreListPage extends Component {
         <MainCompBox>
           <h1>All Stores in Georgia</h1>
           {this.state.storeList.map((store, i) => (
-            <div key={i}>{store.name}</div>
+            <div key={i}>
+              <Link to={`/stores/${store.store_id}`}>{store.name}</Link>
+            </div>
           ))}
+          <button onClick={this.toggleAddForm}>Add New Store</button>
+          <div>
+            {this.state.addFormVisible ? (
+              <AddStoreForm
+                getAllStores={this.getAllStores}
+                toggleAddForm={this.toggleAddForm}
+              />
+            ) : null}
+          </div>
         </MainCompBox>
         <MapBox>
           <MapDisplay />
