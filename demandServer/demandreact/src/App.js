@@ -15,6 +15,7 @@ class App extends Component {
       <Router>
         <WebDiv>
           <NavBar />
+          {/* <h1>Demand Tracker</h1> */}
           <Switch>
             <Route exact path="/" component={HomePage} />
             <Route exact path="/stores" component={StoreListPage} />
@@ -33,4 +34,5 @@ export default App;
 const WebDiv = styled.div`
   font-family: "Kreon", serif;
   background-color: #497195;
+  text-align: center;
 `;

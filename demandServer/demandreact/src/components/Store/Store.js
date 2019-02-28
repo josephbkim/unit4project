@@ -32,9 +32,10 @@ class Store extends Component {
   };
 
   storeDelete = () => {
-    let newStoreId = this.props.match.params.siteid;
+    let newStoreId = this.props.match.params.storeid;
+    console.log(newStoreId);
     axios
-      .delete(`/api/v1/sites/${newStoreId}`)
+      .delete(`/api/v1/stores/${newStoreId}`)
       .then(() => this.props.history.goBack());
   };
 

@@ -13,8 +13,8 @@ class MapDisplay extends Component {
         height="100%"
         frameborder="0"
         style="border:0"
-        url={`https://www.google.com/maps/embed/v1/place?q=place_id:ChIJV4FfHcU28YgR5xBP7BC8hGY&key=${API_KEY}`}
-        // url={`https://www.google.com/maps/embed/v1/place?q=45.46038,9.18259&zoom=14&maptype=roadmap&key=${API_KEY}`}
+        // url={`https://www.google.com/maps/embed/v1/place?q=place_id:ChIJV4FfHcU28YgR5xBP7BC8hGY&key=${API_KEY}`}
+        url={`https://www.google.com/maps/embed/v1/place?q=33.7490,-84.38801&zoom=7&maptype=roadmap&key=${API_KEY}`}
         position="center"
         allowfullscreen
         onClick="/stores"
