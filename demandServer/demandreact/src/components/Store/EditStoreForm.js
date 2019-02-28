@@ -68,28 +68,6 @@ class EditStoreForm extends Component {
               onChange={this.handleChange}
             />
           </label>
-          {/* <label>
-            <Input
-              className="input"
-              name="storeLong"
-              type="text"
-              placeholder="Store Longitude"
-              id="storeLong"
-              defaultValue={this.props.thisStore.storeLong}
-              onChange={this.handleChange}
-            />
-          </label>
-          <label>
-            <Input
-              className="input"
-              name="storeLat"
-              type="text"
-              placeholder="Store Latitude"
-              id="storeLat"
-              defaultValue={this.props.thisStore.storeLong}
-              onChange={this.handleChange}
-            />
-          </label> */}
           <label>
             <Input
               className="input"
