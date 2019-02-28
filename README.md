@@ -16,7 +16,7 @@ This is an app that allows the client(company) to be able to see potential sites
 
 - [Trello Board](https://trello.com/b/PLLRdtMe/unit-4-project)
 
-## Wireframe
+## Wireframe & ERD
 
 - ![Wireframe 1](https://i.imgur.com/SSNLQTVs.png)
 - ![Wireframe 2](https://i.imgur.com/ovSJ4lTs.png)
