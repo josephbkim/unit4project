@@ -8,6 +8,7 @@ gunicorn = "*"
 django-heroku = "*"
 django-cors-headers = "*"
 whitenoise = "*"
+django-rest-framework = "*"
 
 [requires]
 python_version = "3.7"
