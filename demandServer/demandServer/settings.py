@@ -1,3 +1,4 @@
+import django_heroku
 """
 Django settings for demandServer project.
 
@@ -132,3 +133,6 @@ STATIC_URL = '/static/'
 CORS_ORIGIN_WHITELIST = (
     'localhost:3000/'
 )
+
+
+django_heroku.settings(locals())
