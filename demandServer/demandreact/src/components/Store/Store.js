@@ -51,8 +51,8 @@ class Store extends Component {
             <p>Store Name: {this.state.thisStore.name}</p>
             <p>Store Id: {this.state.thisStore.store_id}</p>
             <p>Store Location: {this.state.thisStore.location}</p>
-            <p>Store Longitude: {this.state.thisStore.storeLong}</p>
-            <p>Store Latitude: {this.state.thisStore.storeLat}</p>
+            {/* <p>Store Longitude: {this.state.thisStore.storeLong}</p>
+            <p>Store Latitude: {this.state.thisStore.storeLat}</p> */}
             <p>
               Total Number of Deliveries: {this.state.thisStore.numDeliveries}
             </p>

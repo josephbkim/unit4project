@@ -7,8 +7,8 @@ class AddStoreForm extends Component {
     thisStore: {
       name: "",
       location: "",
-      storeLong: "",
-      storeLat: "",
+      // storeLong: "",
+      // storeLat: "",
       numDeliveries: ""
     }
   };
@@ -53,7 +53,7 @@ class AddStoreForm extends Component {
               onChange={this.handleChange}
             />
           </label>
-          <label>
+          {/* <label>
             <input
               className="input"
               name="storeLong"
@@ -72,7 +72,7 @@ class AddStoreForm extends Component {
               defaultValue={this.state.thisStore.storeLat}
               onChange={this.handleChange}
             />
-          </label>
+          </label> */}
           <label>
             <input
               className="input"

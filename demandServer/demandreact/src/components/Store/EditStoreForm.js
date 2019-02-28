@@ -21,8 +21,8 @@ class EditStoreForm extends Component {
     const newStoreState = { ...this.state.thisStore };
     newStoreState.name = document.getElementById("name").defaultValue;
     newStoreState.location = document.getElementById("location").defaultValue;
-    newStoreState.storeLong = document.getElementById("storeLong").defaultValue;
-    newStoreState.storeLat = document.getElementById("storeLat").defaultValue;
+    // newStoreState.storeLong = document.getElementById("storeLong").defaultValue;
+    // newStoreState.storeLat = document.getElementById("storeLat").defaultValue;
     newStoreState.numDeliveries = document.getElementById(
       "numDeliveries"
     ).defaultValue;
@@ -33,6 +33,7 @@ class EditStoreForm extends Component {
   handleSubmit = event => {
     event.preventDefault();
     let thisStoreId = this.props.thisStore.store_id;
+    console.log(thisStoreId);
     const thePewPew = this.state.thisStore;
     axios.put(`/api/v1/stores/${thisStoreId}/`, thePewPew).then(res => {
       this.props.toggleEditForm();
@@ -67,7 +68,7 @@ class EditStoreForm extends Component {
               onChange={this.handleChange}
             />
           </label>
-          <label>
+          {/* <label>
             <Input
               className="input"
               name="storeLong"
@@ -88,7 +89,7 @@ class EditStoreForm extends Component {
               defaultValue={this.props.thisStore.storeLong}
               onChange={this.handleChange}
             />
-          </label>
+          </label> */}
           <label>
             <Input
               className="input"
