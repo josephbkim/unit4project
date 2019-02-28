@@ -7,8 +7,6 @@ class AddStoreForm extends Component {
     thisStore: {
       name: "",
       location: "",
-      // storeLong: "",
-      // storeLat: "",
       numDeliveries: ""
     }
   };
@@ -30,11 +28,11 @@ class AddStoreForm extends Component {
 
   render() {
     return (
-      <div>
-        <h1>This is the Add Store Form</h1>
+      <AddFormStyles>
+        <h2>New Store Form</h2>
         <form onSubmit={this.handleSubmit}>
           <label>
-            <input
+            <AddInput
               className="input"
               name="name"
               type="text"
@@ -44,7 +42,7 @@ class AddStoreForm extends Component {
             />
           </label>
           <label>
-            <input
+            <AddInput
               className="input"
               name="location"
               type="text"
@@ -53,28 +51,8 @@ class AddStoreForm extends Component {
               onChange={this.handleChange}
             />
           </label>
-          {/* <label>
-            <input
-              className="input"
-              name="storeLong"
-              type="text"
-              placeholder="Store Longitude"
-              defaultValue={this.state.thisStore.storeLong}
-              onChange={this.handleChange}
-            />
-          </label>
           <label>
-            <input
-              className="input"
-              name="storeLat"
-              type="text"
-              placeholder="Store Latitude"
-              defaultValue={this.state.thisStore.storeLat}
-              onChange={this.handleChange}
-            />
-          </label> */}
-          <label>
-            <input
+            <AddInput
               className="input"
               name="numDeliveries"
               type="number"
@@ -85,9 +63,24 @@ class AddStoreForm extends Component {
           </label>
           <button type="submit">Add Site</button>
         </form>
-      </div>
+      </AddFormStyles>
     );
   }
 }
 
 export default AddStoreForm;
+
+const AddFormStyles = styled.div`
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+  font-family: "Kreon", serif;
+  background-color: white;
+  border-radius: 3px;
+  margin: auto;
+  padding: 3px;
+`;
+
+const AddInput = styled.input`
+  width: 80%;
+`;

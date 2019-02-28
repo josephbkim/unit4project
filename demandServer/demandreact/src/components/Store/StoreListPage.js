@@ -43,14 +43,14 @@ class StoreListPage extends Component {
             </StoreBox>
           ))}
           <button onClick={this.toggleAddForm}>Add New Store</button>
-          <div>
+          <AddBox>
             {this.state.addFormVisible ? (
               <AddStoreForm
                 getAllStores={this.getAllStores}
                 toggleAddForm={this.toggleAddForm}
               />
             ) : null}
-          </div>
+          </AddBox>
         </MainCompBox>
         <MapBox>
           <MapDisplay />
@@ -102,4 +102,8 @@ const StoreBox = styled.div`
   background-color: white;
   border-radius: 2px;
   padding: 4px;
+`;
+
+const AddBox = styled.div`
+  /* justify-: center; */
 `;

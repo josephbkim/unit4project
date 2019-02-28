@@ -28,11 +28,11 @@ class AddSiteForm extends Component {
 
   render() {
     return (
-      <div>
+      <AddFormStyles>
         <h1>This is the Add Site Form</h1>
         <form onSubmit={this.handleSubmit}>
           <label>
-            <input
+            <AddInput
               className="input"
               name="name"
               type="text"
@@ -42,7 +42,7 @@ class AddSiteForm extends Component {
             />
           </label>
           <label>
-            <input
+            <AddInput
               className="input"
               name="numDeliveries"
               type="number"
@@ -52,7 +52,7 @@ class AddSiteForm extends Component {
             />
           </label>
           <label>
-            <input
+            <AddInput
               className="input"
               name="totPurAmnt"
               type="float"
@@ -63,9 +63,24 @@ class AddSiteForm extends Component {
           </label>
           <button type="submit">Add Site</button>
         </form>
-      </div>
+      </AddFormStyles>
     );
   }
 }
 
 export default AddSiteForm;
+
+const AddFormStyles = styled.div`
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+  font-family: "Kreon", serif;
+  background-color: white;
+  border-radius: 3px;
+  margin: auto;
+  padding: 3px;
+`;
+
+const AddInput = styled.input`
+  width: 80%;
+`;
